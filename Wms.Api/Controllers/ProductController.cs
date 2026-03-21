@@ -17,9 +17,17 @@ namespace Wms.Api.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Product>>> GetProducts()
+        public async Task<ActionResult<IEnumerable<Product>>> GetProducts(string? sortBy)
         {
-            return await _context.Products.ToListAsync();
+            IQueryable<Product> query = _context.Products;
+            query = sortBy?.ToLower() switch
+            {
+                "name" => query.OrderBy(p => p.Name),
+                "price" => query.OrderBy(p => p.Price),
+                "quantity" => query.OrderByDescending(p => p.Quantity),
+                _ => query.OrderBy(p => p.Id)
+            };
+            return await query.ToListAsync();
         }
 
         [HttpPost]
@@ -28,6 +36,20 @@ namespace Wms.Api.Controllers
             _context.Products.Add(product);
             await _context.SaveChangesAsync();
             return Ok(product);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteProduct(int id)
+        {
+            var product = await _context.Products.FindAsync(id);
+
+            if(product == null)
+            {
+                return NotFound($"Product with ID: {id} not found.");
+            }
+            _context.Products.Remove(product);
+            await _context.SaveChangesAsync();
+            return NoContent();
         }
     }
 }
