@@ -1,16 +1,20 @@
 # Warehouse Management System (WMS)
 
-## Overview
-This project is a backend application built with ASP.NET Core for managing warehouse operations.
+## 📦 Overview
+This project is a backend application built with ASP.NET Core for managing warehouse operations such as storing, tracking, and updating items.
 
-## Features
-- Manage products/items
-- Store and retrieve data from database
-- REST API for CRUD operations
-- Scalable backend architecture
+## 🚀 Features
+- Create, update, and delete warehouse items
+- Track item quantity and availability
+- RESTful API with structured endpoints
+- Database integration using Entity Framework Core
 
-## Technologies
+## 🛠 Technologies
+- C#
 - ASP.NET Core Web API
 - Entity Framework Core
-- C#
-- SQL Database
+- SQL Server / SQLite
+
+## ▶️ How to run
+```bash
+dotnet run
