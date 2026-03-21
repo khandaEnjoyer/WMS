@@ -20,6 +20,6 @@ This project is a backend application built with ASP.NET Core for managing wareh
 dotnet run
 ```
 ## 📬 Example endpoints
-GET /api/items
-POST /api/items
-DELETE /api/items/{id}
+- GET /api/items
+- POST /api/items
+- DELETE /api/items/{id}
