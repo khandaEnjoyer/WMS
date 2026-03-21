@@ -18,3 +18,8 @@ This project is a backend application built with ASP.NET Core for managing wareh
 ## ▶️ How to run
 ```bash
 dotnet run
+
+📬 Example endpoints
+GET /api/items
+POST /api/items
+DELETE /api/items/{id}
