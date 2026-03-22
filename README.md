@@ -71,16 +71,13 @@ Then open Swagger:
 ## 📸 Screenshots
 
 ### Swagger UI
-
-
+![Swagger](screenshots/swagger.png)
 
 ### Get Items Response
-
-
+![GET Items](screenshots/get_items.png)
 
 ### Create Item Request
-
-
+![POST Item](screenshots/post_item.png)
 
 
 ---
